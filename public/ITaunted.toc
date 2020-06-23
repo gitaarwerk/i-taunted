@@ -1,0 +1,10 @@
+## Interface: 80300
+## Title: ITaunted
+## Version: @project-version@
+## Author: Darkrider - Talnivarr (EU)
+## Notes: Single line mention when you taunted a boss or a mob. Only works in raids.
+## X-Category: Boss encounters, Raid, Chat, Tank
+## X-Date: June. 16, 2020
+## X-License: All Rights Reserved
+
+Main.xml
