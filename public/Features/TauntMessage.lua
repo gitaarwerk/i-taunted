@@ -103,8 +103,6 @@ end
 
 
 function ITaunted.TauntMessage.run()
-    print("ITauntedd loaded")
-
     ITaunted.TauntMessage.Frame = CreateFrame("Frame")
     ITaunted.TauntMessage.Frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
     ITaunted.TauntMessage.Frame:SetScript("OnEvent", function (self, event, ...)
