@@ -31,10 +31,12 @@ function ITaunted.TauntMessage.isMassTaunt(spellId)
         -- Warrior
         386071, --Disrupting Shout
         1161,   --Challenging Shout
+        223591, -- Challening Shout #2
         46276,  --Ravager taunt
 
         -- Paladin
         204079, -- Final Stand
+        31790,  --Righteous Defense
 
         -- Monk
         116189, --Provoke, talented
@@ -50,8 +52,10 @@ function ITaunted.TauntMessage.isMassTaunt(spellId)
         -- Engineering
         82407, -- Painful Shock - caused when backfired engineering trinket goes off
 
+        -- Unkniwn
         -- BEES!
         442054, -- Bees!
+        176646, -- Nether Attraction
 
     }
 
@@ -67,6 +71,9 @@ function ITaunted.TauntMessage.isTaunt(spellId)
         --Warrior
         355,    --Taunt
         145058, --Taunt #2
+        138937, -- Taunt #3
+        172907, --Taunt #4
+        55981,  -- Mammoth Trumpet
 
         --Death Knight
         51399,  --Death Grip for Blood (49576 is now just the pull effect)
@@ -74,7 +81,8 @@ function ITaunted.TauntMessage.isTaunt(spellId)
         222409, --Dark Command NPC
 
         --Paladin
-        62124, --Hand of Reckoning
+        62124,  --Hand of Reckoning
+        221710, -- Hand of Reckoning #2
 
         --Druid
         6795, --Growl
@@ -98,7 +106,11 @@ function ITaunted.TauntMessage.isTaunt(spellId)
 
         -- Warlock
         -- Pets
-        17735, --Suffering
+        17735,  --Suffering
+        171014, -- Infernal, Seethe
+
+        -- Engineering
+        40224, --Clintar agro pulse
     }
 
     if ITaunted.Helpers.tableContainsValue(tauntSpells, spellId) then
@@ -127,7 +139,22 @@ function ITaunted.TauntMessage.handleCombatLogEvent(...)
 
 
     if (ITaunted.TauntMessage.isMassTaunt(spellId)) then
-        message = "Mass taunting..."
+        if (event == "SPELL_AURA_APPLIED") then
+            message = "Mass taunting..."
+        elseif (event == "SPELL_CAST_SUCCESS") then
+            message = "Mass taunting..."
+        elseif (event == "SPELL_MISSED") then
+            message = "Mass taunting..."
+        end
+
+        isSameAslastMessage = ITaunted.TauntMessage.lastMessage == message
+
+        -- debounce the message
+        if (not isSameAslastMessage or not isSameTimeCasted) then
+            SendChatMessage(message, "SAY", nil, 1)
+            ITaunted.TauntMessage.lastMessage = message
+            ITaunted.TauntMessage.lastTimeCasted = GetTime()
+        end
     end
 
     if (ITaunted.TauntMessage.isTaunt(spellId)) then
