@@ -3,7 +3,7 @@ ITaunted = {}
 ITaunted.Helpers = {}
 
 function ITaunted.Helpers.parseText(s, tab)
-  return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] or w end))
+    return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] or w end))
 end
 
 function getCharacterinfo(target)
@@ -17,7 +17,6 @@ function getCharacterinfo(target)
     return name, gender, playerClass, race, unitLevel
 end
 
-
 function ITaunted.Helpers.tableContainsValue(table, val)
     for index, value in ipairs(table) do
         if value == val then
@@ -27,7 +26,6 @@ function ITaunted.Helpers.tableContainsValue(table, val)
 
     return false
 end
-
 
 function ITaunted.Helpers.GetPlayerInformation()
     return getCharacterinfo("player")
