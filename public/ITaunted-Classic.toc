@@ -1,6 +1,6 @@
 ## Title: ITaunted
-## Interface: 11501
-## X-Min-Interface: 11501
+## Interface: 11503
+## X-Min-Interface: 11503
 ## X-Future-Interface: TBA
 ## Version: @project-version@
 ## Author: Darkrider - Dunemaul (EU)
