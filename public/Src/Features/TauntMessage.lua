@@ -89,6 +89,7 @@ function ITaunted.TauntMessage.isTaunt(spellId)
         138937, -- Taunt #3
         172907, --Taunt #4
         55981,  -- Mammoth Trumpet
+        12765,  -- improved taunt
 
         --Death Knight
         51399,  --Death Grip for Blood (49576 is now just the pull effect)
@@ -118,6 +119,8 @@ function ITaunted.TauntMessage.isTaunt(spellId)
 
         -- Shaman
         204683, --Dark Whisper
+        463161, -- Hand of Provocation
+        460468, -- Hand of Provocation #2
 
         -- Warlock
         -- Pets
@@ -126,6 +129,7 @@ function ITaunted.TauntMessage.isTaunt(spellId)
 
         -- Engineering
         40224, --Clintar agro pulse
+        468371, -- Mark of the Hunted
     }
 
     if ITaunted.Helpers.tableContainsValue(tauntSpells, spellId) then

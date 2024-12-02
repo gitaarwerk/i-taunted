@@ -7,7 +7,7 @@ function ITaunted.Helpers.parseText(s, tab)
 end
 
 function getCharacterinfo(target)
-    local genderTable = { "neuter or unknown", "male", "female" };
+    local genderTable = { "neutral or unknown", "male", "female" };
     local playerClass, englishClass, classIndex = UnitClass(target);
     local name, upName, level = UnitName(target)
     local unitLevel = UnitLevel(target)
