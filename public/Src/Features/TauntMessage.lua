@@ -61,14 +61,13 @@ function ITaunted.TauntMessage.isMassTaunt(spellId)
         -- Priest
         236003, --Visage of Terror
 
-        -- Warlock
-        -- Pets
+        -- Warlock pets
         43263, -- Ghoul Taunt
 
         -- Engineering
         82407, -- Painful Shock - caused when backfired engineering trinket goes off
 
-        -- Unkniwn
+        -- Unknown
         -- BEES!
         442054, -- Bees!
         176646, -- Nether Attraction
@@ -128,7 +127,7 @@ function ITaunted.TauntMessage.isTaunt(spellId)
         171014, -- Infernal, Seethe
 
         -- Engineering
-        40224, --Clintar agro pulse
+        40224,  --Clintar agro pulse
         468371, -- Mark of the Hunted
     }
 
