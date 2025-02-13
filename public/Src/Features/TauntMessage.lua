@@ -2,7 +2,6 @@
 ITaunted.TauntMessage = {}
 ITaunted.TauntMessage.massTauntLastCasted = GetTime();
 
-
 local function dump(o)
     if type(o) == 'table' then
         local s = '{ ';
@@ -161,11 +160,11 @@ function ITaunted.TauntMessage.handleCombatLogEvent(...)
 
     if (ITaunted.TauntMessage.massTauntLastCasted + 10 < timeNow and canCastAgain and ITaunted.TauntMessage.isMassTaunt(spellId)) then
         if (event == "SPELL_AURA_APPLIED") then
-            message = "Mass taunting"
+            message = "Mass taunt"
         elseif (event == "SPELL_CAST_SUCCESS") then
-            message = "Mass taunting"
+            message = "Mass taunt"
         elseif (event == "SPELL_MISSED") then
-            message = "Mass taunting"
+            message = "Mass taunt"
         else
             message = nil
         end
@@ -203,7 +202,7 @@ function ITaunted.TauntMessage.run()
 
             -- reset out of date addons
             if (ITauntedVars and ITauntedVars.lastResetDate ~= date) then
-                print('\124cffffcee2[ITaunted]: Config had to be reset because of new functionality.')
+                print('\124cffffcee2[i-Taunted]: Config had to be reset because of new functionality.')
                 ITauntedVars = nil
             end
 
@@ -230,22 +229,22 @@ function ITaunted.TauntMessage.run()
 end
 
 local function ITaunted_DebugOn()
-    print('\124cffffcee2[ITaunted]: Debug is now: ON.')
+    print('\124cffffcee2[i-Taunted]: Debug is now: ON.')
     ITauntedVars.debugMode = true
 end
 
 local function ITaunted_DebugOff()
-    print('\124cffffcee2[ITaunted]: Debug is now: OFF.')
+    print('\124cffffcee2[i-Taunted]: Debug is now: OFF.')
     ITauntedVars.debugMode = false;
 end
 
 local function ITaunted_On()
-    print('\124cffffcee2[ITaunted]: ITaunted is now: ON.')
+    print('\124cffffcee2[i-Taunted]: i-Taunted is now: ON.')
     ITauntedVars.isOn = true;
 end
 
 local function ITaunted_Off()
-    print('\124cffffcee2[ITaunted]: ITaunted is now: OFF.')
+    print('\124cffffcee2[i-Taunted]: i-Taunted is now: OFF.')
     ITauntedVars.isOn = false;
 end
 
@@ -258,7 +257,7 @@ local function ITaunted_Init(msg)
     if cmd == "reset" then
         ITauntedVars = nil;
         if (ITauntedVars == nil) then
-            print('\124cffffcee2[ITaunted]: Settings have been reset. You should now type /reload.')
+            print('\124cffffcee2[i-Taunted]: Settings have been reset. You should now type /reload.')
         end
     elseif cmd == "on" then
         ITaunted_On();
@@ -275,7 +274,7 @@ local function ITaunted_Init(msg)
     elseif cmd == "dump" then
         dump(ITauntedVars);
     else
-        print('\124cffffcee2[ITaunted]: Available commands are: on, off, reset, debug, dump')
+        print('\124cffffcee2[i-Taunted]: Available commands are: on, off, reset, debug, dump')
     end
 end
 
