@@ -1,6 +1,6 @@
 ## Title: ITaunted
-## Interface: 110107
-## X-Min-Interface: 110107
+## Interface: 110107, 110200
+## X-Min-Interface: 110107, 110200
 ## X-Future-Interface: TBA
 ## Version: @project-version@
 ## Author: Darkrider - Talnivarr (EU)
